@@ -5,8 +5,9 @@ FECHA_HASTA=${2:-2024-06-01}
 AUTHOR=${3:-cori}
 
 current_datetime=$(date +'%Y-%m-%d_%H-%M-%S')
-# name_repository=$(basename)
-PATH_REPORT=/tmp/reporte-git_$current_datetime.txt
+name_repository=$(basename $PWD)
+echo $name_repository
+PATH_REPORT=/tmp/reporte-git_$name_repository"_"$current_datetime.txt
 
 echo "Reporte GIT desde $FECHA_DESDE hasta: $FECHA_HASTA"
 echo "Autor: $AUTHOR"
